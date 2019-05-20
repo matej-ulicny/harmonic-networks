@@ -1,10 +1,10 @@
 # Harmonic Networks
 
-The code used for experiments in papers **Harmonic Networks: Integrating Spectral Information into CNNs** https://arxiv.org/abs/1812.03205 and **Harmonic Networks with Limited Training Samples** https://arxiv.org/abs/1905.00135 .
+The code used for experiments in papers **Harmonic Networks: Integrating Spectral Information into CNNs** https://arxiv.org/abs/1812.03205 and **Harmonic Networks with Limited Training Samples** https://arxiv.org/abs/1905.00135
 
 Convolutional neural networks (CNNs) are very popular nowadays for image processing. CNNs allow one to learn optimal filters in a (mostly) supervised machine learning context. However this typically requires abundant labelled training data to estimate the filter parameters. Alternative strategies have been deployed for reducing the number of parameters and / or filters to be learned and thus decrease overfitting. In the context of reverting to preset filters, we propose here a computationally efficient harmonic block that uses Discrete Cosine Transform (DCT) filters in CNNs. In this work we examine the performance of harmonic networks in limited training data scenario. We validate experimentally that its performance compares well against scattering networks that use wavelets as preset filters.
 
-The implementation is based on the original PyTorch WRN code from https://github.com/szagoruyko/wide-residual-networks/tree/master/pytorch .
+The implementation is based on the original PyTorch WRN code from https://github.com/szagoruyko/wide-residual-networks/tree/master/pytorch
 
 Test errors in % (median of 5 runs) on CIFAR datasets:
 
@@ -25,13 +25,13 @@ Classification accuracy in % (mean &plusmn; std) on STL test set using folds or 
 | ------ | -------- | --- |
 | WRN 16-8 | 73.50 &plusmn; 0.87 | 87.29 &plusmn; 0.21 |
 | Scat + WRN | 76.00 &plusmn; 0.60 | 87.60 |
-| Harm WRN 16-8 & 76.95 &plusmn; 0.93 | **90.45 &plusmn; 0.12** \\
-| Harm WRN 16-8 &lambda;=3 | 76.65 &plusmn; 0.90 | 90.39 &plusmn; 0.08 \\
-| Harm WRN 16-8 progressive &lambda; | **77.19 &plusmn; 1.02** | 90.28 &plusmn; 0.20 \\
+| Harm WRN 16-8 | 76.95 &plusmn; 0.93 | **90.45 &plusmn; 0.12** |
+| Harm WRN 16-8 &lambda;=3 | 76.65 &plusmn; 0.90 | 90.39 &plusmn; 0.08 |
+| Harm WRN 16-8 progressive &lambda; | **77.19 &plusmn; 1.02** | 90.28 &plusmn; 0.20 |
 
 ## Requirements
 
-Tested on Python 2.7, 3.5, PyTorch 4.1, 1.0, 1.1
+Tested on Python 2.7, 3.5, PyTorch 4.1, 1.0, 1.1.
 Install the required packages by running:
 
 ```
