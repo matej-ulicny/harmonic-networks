@@ -9,17 +9,25 @@ The implementation is based on the original PyTorch WRN code from https://github
 Test errors in % (median of 5 runs) on CIFAR datasets:
 
 | Method | dropout | compression | parameters | CIFAR-10 | CIFAR-100 |
-| ------ | ------- | ----------- | ---------- | -------- | --------- |
+| ------ | :-----: | :---------: | :--------: | :------: | :-------: |
 | WRN-28-10 | &#10004; | | 36.5M | 3.91 | 18.75 |
-| Harm1-WRN-28-10 (no BN) | | | 36.5M | 4.10 | 19.17 |
 | Harm1-WRN-28-10 | | | 36.5M | 3.90 | 18.80 |
 | Harm1-WRN-28-10 | &#10004; | | 36.5M | **3.64** | **18.57** |
 | Harm-WRN-28-10 | &#10004; | | 36.5M | 3.86 | **18.57** |
-| -------------- | -------- | | ----- | ---- | --------- |
-| Harm-WRN-28-10 |  | &lambda;=3 | 24.4M | 3.84 | 18.58 |
+| Harm-WRN-28-10 | &#10004; | &lambda;=3 | 24.4M | 3.84 | 18.58 |
 | Harm-WRN-28-10 | &#10004; | &lambda;=2 | 12.3M | 4.25 | 19.97 |
 | WRN-28-8 | &#10004; | | 23.4M | 4.01 | 19.38 |
 | WRN-28-6 | &#10004; | | 13.1M | 4.09 | 20.17 |
+
+Classification accuracy in % (mean &plusmn; std) on STL test set using folds or all 5000 training samples:
+
+| Method | 10-folds | all |
+| ------ | -------- | --- |
+| WRN 16-8 | 73.50 &plusmn; 0.87 | 87.29 &plusmn; 0.21 |
+| Scat + WRN | 76.00 &plusmn; 0.60 | 87.60 |
+| Harm WRN 16-8 & 76.95 &plusmn; 0.93 | **90.45 &plusmn; 0.12** \\
+| Harm WRN 16-8 &lambda;=3 | 76.65 &plusmn; 0.90 | 90.39 &plusmn; 0.08 \\
+| Harm WRN 16-8 progressive &lambda; | **77.19 &plusmn; 1.02** | 90.28 &plusmn; 0.20 \\
 
 ## Requirements
 
@@ -53,13 +61,13 @@ python main.py --save ./save_location --depth 28 --width 10 --dropout 0.2 --epoc
 For training harmonic WRNs on STL dataset is analogous to running on CIFAR:
 
 ```
-python main_stl.py --save ./save_location --depth 16 --width 8 --dropout 0.3 --ngpu 2 --gpu_id 0,1
+python main_stl.py --save ./save_location --depth 16 --width 8 --dropout 0.3 --batch_size 32 --ngpu 2 --gpu_id 0,1
 ```
 
 By default the whole set of 5000 images is used for training. Training on pre-defined fold is possible by specifying --fold parameter (0-9). Number of epochs and scheduler steps are adjusted automatically. Training on fold number 4:
 
 ```
-python main_stl.py --save ./save_location --depth 16 --width 8 --dropout 0.3 --fold 4 --ngpu 2 --gpu_id 0,1
+python main_stl.py --save ./save_location --depth 16 --width 8 --dropout 0.3  --batch_size 32 --fold 4 --ngpu 2 --gpu_id 0,1
 ```
 
 ## Cite
