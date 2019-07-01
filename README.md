@@ -1,6 +1,6 @@
 # Harmonic Networks
 
-The code used for experiments in papers **Harmonic Networks: Integrating Spectral Information into CNNs** https://arxiv.org/abs/1812.03205 and **Harmonic Networks with Limited Training Samples** https://arxiv.org/abs/1905.00135
+The code used for experiments in papers **Harmonic Networks: Integrating Spectral Information into CNNs** https://arxiv.org/abs/1812.03205 and **Harmonic Networks with Limited Training Samples** (European Signal Processing Conference 2019) https://arxiv.org/abs/1905.00135
 
 Convolutional neural networks (CNNs) are very popular nowadays for image processing. CNNs allow one to learn optimal filters in a (mostly) supervised machine learning context. However this typically requires abundant labelled training data to estimate the filter parameters. Alternative strategies have been deployed for reducing the number of parameters and / or filters to be learned and thus decrease overfitting. In the context of reverting to preset filters, we propose here a computationally efficient harmonic block that uses Discrete Cosine Transform (DCT) filters in CNNs. In this work we examine the performance of harmonic networks in limited training data scenario. We validate experimentally that its performance compares well against scattering networks that use wavelets as preset filters.
 
