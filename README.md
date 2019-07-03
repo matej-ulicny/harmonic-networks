@@ -82,11 +82,13 @@ python main_stl.py --save ./save_location --depth 16 --width 8 --dropout 0.3  --
 ```
 or
 ```
-@article{Ulicny19,
-  title = {Harmonic Networks with Limited Training Samples},
+@inproceedings{Ulicny19,
   author = {Ulicny, Matej and Krylov, Vladimir A and Dahyot, Rozenn},
-  journal = {arXiv preprint arXiv:1905.00135},
-  year = {2019}
+  booktitle={European Signal Processing Conference (EUSIPCO) 2019},
+  title = {Harmonic Networks with Limited Training Samples},
+  year={2019}, 
+  month={Sep.},
+  url={https://arxiv.org/abs/1905.00135}
 }
 ```
 
