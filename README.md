@@ -1,5 +1,4 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/harmonic-networks-with-limited-training/image-classification-on-stl-10)](https://paperswithcode.com/sota/image-classification-on-stl-10?p=harmonic-networks-with-limited-training)
-
 # Harmonic Networks
 
 The code used for experiments in papers [**Harmonic Networks for Image Classification**](https://www.scss.tcd.ie/Rozenn.Dahyot/pdf/Harmonic_BMVC2019.pdf) and [**Harmonic Networks with Limited Training Samples**](https://arxiv.org/abs/1905.00135)
