@@ -11,11 +11,11 @@ Changelog:
 
 ImageNet validation set errors:
 
-| Method | Parameters | Top-1 % (224) | Top-5 % (224) | Top-1 % (320) | Top-5 % (320) | Pretrained |
+| Method | Params | Top-1 % (224) | Top-5 % (224) | Top-1 % (320) | Top-5 % (320) | Weights |
 | ------ | :--------: | :-----------: | :-----------: | :-----------: | :-----------: | :--------: |
-| SE-ResNext-101 32x4d | 49.0M | 19.81 | 4.90 | 18.80 | 4.19 | [weights](https://drive.google.com/file/d/1_tnT2ui5KSmHnARRaqgiyfbWRwbpJxXr/view?usp=sharing) |
-| Harm-SE-ResNeXt-101 32x4d | 49.0M | 19.55 | 4.79 | 18.72 | 4.23 | [weights]([weights](https://drive.google.com/file/d/1LtHPMb9IqJ2tWUhy_WnCXwq3dtJDPgbX/view?usp=sharing)) |
-| Harm-SE-ResNeXt-101 64x4d | 88.2M | **18.36** | **4.37** | **17.34** | **3.71** | [weights](https://drive.google.com/file/d/1LtHPMb9IqJ2tWUhy_WnCXwq3dtJDPgbX/view?usp=sharing) |
+| SE-ResNext-101 32x4d | 49.0M | 19.81 | 4.90 | 18.80 | 4.19 | [download](https://drive.google.com/file/d/1_tnT2ui5KSmHnARRaqgiyfbWRwbpJxXr/view?usp=sharing) |
+| Harm-SE-ResNeXt-101 32x4d | 49.0M | 19.55 | 4.79 | 18.72 | 4.23 | [download](https://drive.google.com/file/d/1LtHPMb9IqJ2tWUhy_WnCXwq3dtJDPgbX/view?usp=sharing)) |
+| Harm-SE-ResNeXt-101 64x4d | 88.2M | **18.36** | **4.37** | **17.34** | **3.71** | [download](https://drive.google.com/file/d/1LtHPMb9IqJ2tWUhy_WnCXwq3dtJDPgbX/view?usp=sharing) |
 
 ## Requirements
 
