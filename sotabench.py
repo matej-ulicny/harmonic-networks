@@ -1,10 +1,11 @@
 import torch
-from torchbench.image_classification import ImageNet
-from imagenet.resnext.timm import create_model
-from imagenet.resnext.timm.data import resolve_data_config, create_transform, transforms_imagenet_eval
-from imagenet.resnext.timm.models import TestTimePoolHead
+#from torchbench.image_classification import ImageNet
 import sys
 sys.path.insert(0,'./imagenet/resnext')
+from imagenet.resnext.timm import create_model
+from imagenet.resnext.timm.data import resolve_data_config, transforms_imagenet_eval, create_transform
+from imagenet.resnext.timm.models import TestTimePoolHead
+
 
 model = create_model(
     'harm_se_resnext101_64x4d',
@@ -13,7 +14,7 @@ model = create_model(
     pretrained=True
 )
 
-data_config = resolve_data_config(m['args'], model=model, verbose=True)
+data_config = resolve_data_config(dict(), model=model, verbose=True)
 #if m['ttp']:
 #    model = TestTimePoolHead(model, model.default_cfg['pool_size'])
 #    data_config['crop_pct'] = 1.0
