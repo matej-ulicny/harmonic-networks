@@ -3,7 +3,7 @@ from torchbench.image_classification import ImageNet
 import sys
 sys.path.insert(0,'./imagenet/resnext')
 from imagenet.resnext.timm import create_model
-from imagenet.resnext.timm.data import resolve_data_config, transforms_imagenet_eval, create_transform
+from imagenet.resnext.timm.data import resolve_data_config, transforms_imagenet_eval, transforms_imagenet_eval
 from imagenet.resnext.timm.models import TestTimePoolHead
 
 
@@ -18,7 +18,10 @@ data_config = resolve_data_config(dict(), model=model, verbose=True)
 #if m['ttp']:
 #    model = TestTimePoolHead(model, model.default_cfg['pool_size'])
 #    data_config['crop_pct'] = 1.0
-input_transform = create_transform(**data_config)
+
+data_config.update(img_size = data_config['input_size'][2])
+del data_config['input_size']
+input_transform = transforms_imagenet_eval(**data_config)
 
 # Run the benchmark
 ImageNet.benchmark(
