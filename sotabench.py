@@ -3,7 +3,8 @@ from torchbench.image_classification import ImageNet
 from imagenet.resnext.timm import create_model
 from imagenet.resnext.timm.data import resolve_data_config, create_transform, transforms_imagenet_eval
 from imagenet.resnext.timm.models import TestTimePoolHead
-import os
+import sys
+sys.path.insert(0,'./imagenet/resnext')
 
 model = create_model(
     'harm_se_resnext101_64x4d',
