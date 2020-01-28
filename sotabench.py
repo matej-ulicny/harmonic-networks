@@ -34,7 +34,7 @@ for model_name, paper_name in zip(model_names, paper_names):
         # Run the benchmark
         ImageNet.benchmark(
             model=model,
-            paper_model_name=paper_name + ' (320x320, Mean-Max Pooling)',
+            paper_model_name=paper_name,
             paper_arxiv_id='2001.06570',
             input_transform=input_transform,
             batch_size=256,
