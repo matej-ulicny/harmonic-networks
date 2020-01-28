@@ -61,12 +61,14 @@ default_cfgs = {
         interpolation='bicubic'),
     'resnext101_32x4d': _cfg(url=''),
     'resnext101_32x8d': _cfg(url='https://download.pytorch.org/models/resnext101_32x8d-8ba56ff5.pth'),
-    'resnext101_64x4d': _cfg(url=''),
     'tv_resnext50_32x4d': _cfg(url='https://download.pytorch.org/models/resnext50_32x4d-7cdf4587.pth'),
     'ig_resnext101_32x8d': _cfg(url='https://download.pytorch.org/models/ig_resnext101_32x8-c38310e5.pth'),
     'ig_resnext101_32x16d': _cfg(url='https://download.pytorch.org/models/ig_resnext101_32x16-c6f796b0.pth'),
     'ig_resnext101_32x32d': _cfg(url='https://download.pytorch.org/models/ig_resnext101_32x32-e4b90b00.pth'),
     'ig_resnext101_32x48d': _cfg(url='https://download.pytorch.org/models/ig_resnext101_32x48-3e41cc8a.pth'),
+    'se_resnext101_32x4d': _cfg(url='https://github.com/matej-ulicny/harmonic-networks/releases/download/0.1.0/se_resnext101_32x4d-3250bf17.pth'),
+    'harm_se_resnext101_32x4d': _cfg(url='https://github.com/matej-ulicny/harmonic-networks/releases/download/0.1.0/harm_se_resnext101_32x4d-e5b7b14d.pth'),
+    'harm_se_resnext101_64x4d': _cfg(url='https://github.com/matej-ulicny/harmonic-networks/releases/download/0.1.0/harm_se_resnext101_64x4d-74a0d9f0.pth'),
 }
 
 
@@ -742,34 +744,40 @@ def ig_resnext101_32x48d(pretrained=True, num_classes=1000, in_chans=3, **kwargs
 def se_resnext101_32x4d(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
     """Constructs a SeResNeXt-101 32x4d model.
     """
-    default_cfg = default_cfgs['resnext101_32x4d']
+    default_cfg = default_cfgs['se_resnext101_32x4d']
     model = ResNet(
         Bottleneck, [3, 4, 23, 3], cardinality=32, base_width=4,
         num_classes=num_classes, in_chans=in_chans, use_se=True,
         avg_down=True, root_pool='max', zero_init_residual=True, **kwargs)
     model.default_cfg = default_cfg
+    if pretrained:
+        load_pretrained(model, default_cfg, num_classes, in_chans)
     return model
 
 @register_model
 def harm_se_resnext101_32x4d(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
     """Constructs a HarmSeResNeXt-101 32x4d model.
     """
-    default_cfg = default_cfgs['resnext101_32x4d']
+    default_cfg = default_cfgs['harm_se_resnext101_32x4d']
     model = ResNet(
         Bottleneck, [3, 4, 23, 3], cardinality=32, base_width=4,
         num_classes=num_classes, in_chans=in_chans, use_se=True,
         avg_down=True, root_pool='max', zero_init_residual=True, harmonic=True, **kwargs)
     model.default_cfg = default_cfg
+    if pretrained:
+        load_pretrained(model, default_cfg, num_classes, in_chans)
     return model
 
 @register_model
 def harm_se_resnext101_64x4d(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
     """Constructs a HarmSeResNeXt-101 64x4d model.
     """
-    default_cfg = default_cfgs['resnext101_64x4d']
+    default_cfg = default_cfgs['harm_se_resnext101_64x4d']
     model = ResNet(
         Bottleneck, [3, 4, 23, 3], cardinality=64, base_width=4,
         num_classes=num_classes, in_chans=in_chans, use_se=True,
         avg_down=True, zero_init_residual=True, harmonic=True, **kwargs)
     model.default_cfg = default_cfg
+    if pretrained:
+        load_pretrained(model, default_cfg, num_classes, in_chans)
     return model
