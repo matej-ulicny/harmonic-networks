@@ -1,5 +1,5 @@
 import torch
-#from torchbench.image_classification import ImageNet
+from torchbench.image_classification import ImageNet
 import sys
 sys.path.insert(0,'./imagenet/resnext')
 from imagenet.resnext.timm import create_model
