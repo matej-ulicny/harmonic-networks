@@ -8,6 +8,7 @@
 """
 
 import torch.nn as nn
+from utils import load_pretrained
 import sys
 sys.path.insert(0, '../')
 from harmonic import Harm2d
@@ -180,27 +181,33 @@ class ResNet(nn.Module):
         return x
 
 
-def resnet18(**kwargs):
+def resnet18(pretrained=False, **kwargs):
     model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
     return model
 
 
-def resnet34(**kwargs):
+def resnet34(pretrained=False, **kwargs):
     model = ResNet(BasicBlock, [3, 4, 6, 3], **kwargs)
     return model
 
 
-def resnet50(**kwargs):
+def resnet50(pretrained=False, **kwargs):
     model = ResNet(Bottleneck, [3, 4, 6, 3], **kwargs)
+    if pretrained and kwargs['harm_root'] and kwargs['harm_res_blocks'] and (not 'pool' in kwargs or not kwargs['pool'] in ['avg', 'max']) \
+    and (not 'levels' in kwargs or kwargs['levels'] == [None, None, None, None]):
+        load_pretrained(model, 'https://github.com/matej-ulicny/harmonic-networks/releases/download/0.1.0/harm_resnet50-eec30392.pth')
     return model
 
 
-def resnet101(**kwargs):
+def resnet101(pretrained=False, **kwargs):
     model = ResNet(Bottleneck, [3, 4, 23, 3], **kwargs)
+    if pretrained and kwargs['harm_root'] and kwargs['harm_res_blocks'] and (not 'pool' in kwargs or not kwargs['pool'] in ['avg', 'max']) \
+    and (not 'levels' in kwargs or kwargs['levels'] == [None, None, None, None]):
+        load_pretrained(model, 'https://github.com/matej-ulicny/harmonic-networks/releases/download/0.1.0/harm_resnet101-62e185b1.pth')
     return model
 
 
-def resnet152(**kwargs):
+def resnet152(pretrained=False, **kwargs):
     model = ResNet(Bottleneck, [3, 8, 36, 3], **kwargs)
     return model
 

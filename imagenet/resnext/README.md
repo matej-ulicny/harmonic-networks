@@ -1,3 +1,5 @@
+[![SotaBench](https://img.shields.io/endpoint.svg?url=https://sotabench.com/api/v0/badge/gh/matej-ulicny/harmonic-networks)](https://sotabench.com/user/matejulicny/repos/matej-ulicny/harmonic-networks)
+
 # Harmonic ResNeXt Networks
 
 Our harmonic ResNeXt models trained on ImageNet-1k are reported in [**Harmonic Convolutional Networks based on Discrete Cosine Transform**](https://arxiv.org/abs/2001.06570)

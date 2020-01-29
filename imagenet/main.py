@@ -58,6 +58,8 @@ parser.add_argument('--resume', default='', type=str, metavar='PATH',
                     help='path to latest checkpoint (default: none)')
 parser.add_argument('-e', '--evaluate', dest='evaluate', action='store_true',
                     help='evaluate model on validation set')
+parser.add_argument('--pretrained', dest='pretrained', action='store_true',
+                    help='use pre-trained model')
 parser.add_argument('--seed', default=None, type=int,
                     help='seed for initializing training. ')
 parser.add_argument('--gpu', default=None, type=int,
@@ -115,7 +117,7 @@ def main_worker(gpu, ngpus_per_node, args):
 
     # create model
     print("=> creating model '{}'".format(args.arch))
-    model = models.__dict__[args.arch](harm_root=args.harm_root, harm_res_blocks=args.harm_res_blocks, pool=args.pool, levels=args.levels)
+    model = models.__dict__[args.arch](pretrained=args.pretrained, harm_root=args.harm_root, harm_res_blocks=args.harm_res_blocks, pool=args.pool, levels=args.levels)
 
     if args.gpu is not None:
         torch.cuda.set_device(args.gpu)

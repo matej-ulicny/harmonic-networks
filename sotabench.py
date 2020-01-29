@@ -5,16 +5,39 @@ sys.path.insert(0,'./imagenet/resnext')
 from imagenet.resnext.timm import create_model
 from imagenet.resnext.timm.data import resolve_data_config, transforms_imagenet_eval, transforms_imagenet_eval
 from imagenet.resnext.timm.models import TestTimePoolHead
+# imports for resnets
+sys.path.insert(0,'./imagenet')
+from imagenet import models
+import torchvision.transforms as transforms
 
+model_names = ['resnet50',
+               'resnet101',
+               'harm_se_resnext101_32x4d', 
+               'harm_se_resnext101_32x4d', 
+               'harm_se_resnext101_64x4d',
+               'harm_se_resnext101_64x4d']
+paper_names = ['Harm-ResNet-50', 
+               'Harm-ResNet-101',
+               'Harm-SE-RNX-101 32x4d', 
+               'Harm-SE-RNX-101 32x4d (320x320, Mean-Max Pooling)', 
+               'Harm-SE-RNX-101 64x4d', 
+               'Harm-SE-RNX-101 64x4d (320x320, Mean-Max Pooling)']
+input_sizes = [224, 224, 224, 320, 224, 320]
 
-model_names = ['harm_se_resnext101_32x4d', 'harm_se_resnext101_64x4d']
-paper_names = ['Harm-SE-RNX(32x4d)', 'Harm-SE-RNX(64x4d)']
-input_sizes = [224, 320]
+for model_name, paper_name, input_size in zip(model_names, paper_names, input_sizes):
 
-for model_name, paper_name in zip(model_names, paper_names):
+    if 'resnet' in model_name:
 
-    for input_size in input_sizes:
+        model = models.__dict__[model_name](pretrained=True, harm_root=True, harm_res_blocks=True)
 
+        input_transform = transforms.Compose([
+            transforms.Resize(256),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                                 std=[0.229, 0.224, 0.225])
+        ])
+    else:
         model = create_model(
             model_name,
             num_classes=1000,
@@ -28,21 +51,18 @@ for model_name, paper_name in zip(model_names, paper_names):
         if input_size > 224:
             model = TestTimePoolHead(model, model.default_cfg['pool_size'])
             data_config['crop_pct'] = 1.0
-            paper_name += ' (320x320, Mean-Max Pooling)'
         input_transform = transforms_imagenet_eval(**data_config)
         
-        # Run the benchmark
-        ImageNet.benchmark(
-            model=model,
-            paper_model_name=paper_name,
-            paper_arxiv_id='2001.06570',
-            input_transform=input_transform,
-            batch_size=256,
-            num_gpu=1,
-            data_root=('~/data/imagenet')
-        )
-        
+    # Run the benchmark
+    ImageNet.benchmark(
+        model=model,
+        paper_model_name=paper_name,
+        paper_arxiv_id='2001.06570',
+        input_transform=input_transform,
+        batch_size=256,
+        num_gpu=1,
+        data_root=('~/data/imagenet')
+    )
+
 torch.cuda.empty_cache()
-
-
 

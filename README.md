@@ -1,4 +1,5 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/harmonic-networks-with-limited-training/image-classification-on-stl-10)](https://paperswithcode.com/sota/image-classification-on-stl-10?p=harmonic-networks-with-limited-training)
+[![SotaBench](https://img.shields.io/endpoint.svg?url=https://sotabench.com/api/v0/badge/gh/matej-ulicny/harmonic-networks)](https://sotabench.com/user/matejulicny/repos/matej-ulicny/harmonic-networks)
 # Harmonic Networks
 
 The code used for experiments in papers [**Harmonic Networks for Image Classification**](https://bmvc2019.org/wp-content/uploads/papers/0628-paper.pdf), [**Harmonic Networks with Limited Training Samples**](https://ieeexplore.ieee.org/abstract/document/8902831) and [**Harmonic Convolutional Networks based on Discrete Cosine Transform**](https://arxiv.org/abs/2001.06570)

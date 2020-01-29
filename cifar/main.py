@@ -22,8 +22,6 @@ from torch.utils.data.sampler import SubsetRandomSampler
 import torch.nn.functional as F
 import torchnet as tnt
 from torchnet.engine import Engine
-import sys
-sys.path.insert(0, '../')
 from utils import cast, data_parallel, print_tensor_dict
 from torch.backends import cudnn
 from models.harm_wrn import resnet
