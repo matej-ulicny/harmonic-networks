@@ -5,7 +5,6 @@ import torchvision.models as models
 import torch.autograd.variable as Variable
 import numpy as np
 import scipy.io as sio
-sys.path.insert(0, '../')
 from harmonic import Harm2d
 
 class HED(nn.Module):

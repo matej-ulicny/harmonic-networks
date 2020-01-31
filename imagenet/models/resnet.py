@@ -9,8 +9,6 @@
 
 import torch.nn as nn
 from utils import load_pretrained
-import sys
-sys.path.insert(0, '../')
 from harmonic import Harm2d
 
 

@@ -23,8 +23,14 @@ paper_names = ['Harm-ResNet-50',
                'Harm-SE-RNX-101 64x4d', 
                'Harm-SE-RNX-101 64x4d (320x320, Mean-Max Pooling)']
 input_sizes = [224, 224, 224, 320, 224, 320]
+paper_results = [{'Top 1 Accuracy': 76.98, 'Top 5 Accuracy': 93.37},
+                 {'Top 1 Accuracy': 78.52, 'Top 5 Accuracy': 94.25},
+                 {'Top 1 Accuracy': 80.45, 'Top 5 Accuracy': 95.21},
+                 {'Top 1 Accuracy': 81.28, 'Top 5 Accuracy': 95.77},
+                 {'Top 1 Accuracy': 81.64, 'Top 5 Accuracy': 95.63},
+                 {'Top 1 Accuracy': 82.66, 'Top 5 Accuracy': 96.29}]
 
-for model_name, paper_name, input_size in zip(model_names, paper_names, input_sizes):
+for model_name, paper_name, input_size, paper_result in zip(model_names, paper_names, input_sizes, paper_results):
 
     if 'resnet' in model_name:
 
@@ -58,6 +64,8 @@ for model_name, paper_name, input_size in zip(model_names, paper_names, input_si
         model=model,
         paper_model_name=paper_name,
         paper_arxiv_id='2001.06570',
+        paper_pwc_id='harmonic-convolutional-networks-based-on',
+        paper_results=paper_result,
         input_transform=input_transform,
         batch_size=256,
         num_gpu=1,

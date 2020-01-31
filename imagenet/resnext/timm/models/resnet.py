@@ -14,8 +14,6 @@ import torch.nn.functional as F
 from .registry import register_model
 from .helpers import load_pretrained
 from .adaptive_avgmax_pool import SelectAdaptivePool2d
-import sys
-sys.path.insert(0, '../../')
 from harmonic import Harm2d
 from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 

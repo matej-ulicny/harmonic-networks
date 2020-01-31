@@ -1,3 +1,5 @@
+[![SotaBench](https://img.shields.io/endpoint.svg?url=https://sotabench.com/api/v0/badge/gh/matej-ulicny/harmonic-networks)](https://sotabench.com/user/matejulicny/repos/matej-ulicny/harmonic-networks)
+
 # Harmonic Networks on ImageNet
 
 The code used for experiments in papers [**Harmonic Networks for Image Classification**](https://bmvc2019.org/wp-content/uploads/papers/0628-paper.pdf) and [**Harmonic Convolutional Networks based on Discrete Cosine Transform**](https://arxiv.org/abs/2001.06570)
@@ -18,6 +20,8 @@ ImageNet validation set errors:
 | ResNet-101 (maxpool) | 44.5M | 22.63 | 6.44 |
 | Harm-ResNet-101 | 44.5M | **21.48** | **5.75** |
 
+[Code for harmonic ResNext models](resnext/)
+
 ## Requirements
 
 Tested on Python 3.5, PyTorch 1.1.
@@ -37,6 +41,12 @@ python main.py -a resnet50 ./path/to/imagenet/ --batch-size 256 --harm_root --ha
 ```
 
 Models with increased stride can be built by simply ommiting --pool argument. Compression and pool arguments do not affect VGG networks.
+
+Testing is performed via the same script. Pretrained are only Harm-ResNet-50 and Harm-ResNet-101, which you can test with a command specifying -a {resnet50,resnet101}:
+
+```
+python main.py -a resnet101 ./path/to/imagenet/ --batch-size 256 --harm_root --harm_res_blocks --evaluate --pretrained
+```
 
 ## Cite
 

@@ -1,3 +1,4 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/harmonic-convolutional-networks-based-on/image-classification-on-imagenet)](https://paperswithcode.com/sota/image-classification-on-imagenet?p=harmonic-convolutional-networks-based-on)
 [![SotaBench](https://img.shields.io/endpoint.svg?url=https://sotabench.com/api/v0/badge/gh/matej-ulicny/harmonic-networks)](https://sotabench.com/user/matejulicny/repos/matej-ulicny/harmonic-networks)
 
 # Harmonic ResNeXt Networks

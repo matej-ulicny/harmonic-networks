@@ -8,8 +8,6 @@
 """
 
 import torch.nn as nn
-import sys
-sys.path.insert(0, '../')
 from harmonic import Harm2d
 
 
