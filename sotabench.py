@@ -23,12 +23,12 @@ paper_names = ['Harm-ResNet-50',
                'Harm-SE-RNX-101 64x4d', 
                'Harm-SE-RNX-101 64x4d (320x320, Mean-Max Pooling)']
 input_sizes = [224, 224, 224, 320, 224, 320]
-paper_results = [{'Top 1 Accuracy': 76.98, 'Top 5 Accuracy': 93.37},
-                 {'Top 1 Accuracy': 78.52, 'Top 5 Accuracy': 94.25},
-                 {'Top 1 Accuracy': 80.45, 'Top 5 Accuracy': 95.21},
-                 {'Top 1 Accuracy': 81.28, 'Top 5 Accuracy': 95.77},
-                 {'Top 1 Accuracy': 81.64, 'Top 5 Accuracy': 95.63},
-                 {'Top 1 Accuracy': 82.66, 'Top 5 Accuracy': 96.29}]
+paper_results = [{'Top 1 Accuracy': 0.7698, 'Top 5 Accuracy': 0.9337},
+                 {'Top 1 Accuracy': 0.7852, 'Top 5 Accuracy': 0.9425},
+                 {'Top 1 Accuracy': 0.8045, 'Top 5 Accuracy': 0.9521},
+                 {'Top 1 Accuracy': 0.8128, 'Top 5 Accuracy': 0.9577},
+                 {'Top 1 Accuracy': 0.8164, 'Top 5 Accuracy': 0.09563},
+                 {'Top 1 Accuracy': 0.8266, 'Top 5 Accuracy': 0.9629}]
 
 for model_name, paper_name, input_size, paper_result in zip(model_names, paper_names, input_sizes, paper_results):
 
