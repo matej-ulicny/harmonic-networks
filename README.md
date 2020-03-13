@@ -29,7 +29,7 @@ Repository implements experiments on several datasets:
 * [Image classification on CIFAR10/100](cifar/)
 * [Image classification on STL10](stl/)
 * [Image classification on ImageNet](imagenet/)
-* [Object tedetction on MS COCO and PASCAL VOC](mmdetection/)
+* [Object detection on MS COCO and PASCAL VOC](mmdetection/)
 * [Boundary prediction on BSDS500](bsds/)
 
 ## Citation
