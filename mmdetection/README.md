@@ -53,13 +53,16 @@ To train with standard 2x schedule siply double the number of epochs and values 
 
 ## Citation
 ```
-@misc{Ulicny20,
-    title={Harmonic Convolutional Networks based on Discrete Cosine Transform},
-    author={Matej Ulicny and Vladimir A. Krylov and Rozenn Dahyot},
-    year={2020},
-    eprint={2001.06570},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
+@article{Ulicny22,
+  title = {Harmonic convolutional networks based on discrete cosine transform},
+  journal = {Pattern Recognition},
+  volume = {129},
+  pages = {108707},
+  year = {2022},
+  issn = {0031-3203},
+  doi = {https://doi.org/10.1016/j.patcog.2022.108707},
+  url = {https://www.sciencedirect.com/science/article/pii/S0031320322001881},
+  author = {Matej Ulicny and Vladimir A. Krylov and Rozenn Dahyot},
 }
 ```
 and mmdetection [technical report](https://arxiv.org/abs/1906.07155):
