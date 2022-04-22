@@ -1,6 +1,6 @@
 # Harmonic Wide Residual Networks on CIFAR10/100
 
-The code used for experiments in papers [**Harmonic Networks for Image Classification**](https://bmvc2019.org/wp-content/uploads/papers/0628-paper.pdf), [**Harmonic Networks with Limited Training Samples**](https://ieeexplore.ieee.org/abstract/document/8902831).
+The code used for experiments in papers [**Harmonic Networks for Image Classification**](https://bmvc2019.org/wp-content/uploads/papers/0628-paper.pdf), [**Harmonic Networks with Limited Training Samples**](https://ieeexplore.ieee.org/abstract/document/8902831), [**Harmonic Convolutional Networks based on Discrete Cosine Transform**](https://doi.org/10.1016/j.patcog.2022.108707).
 
 The implementation is based on the original PyTorch WRN code from https://github.com/szagoruyko/wide-residual-networks/tree/master/pytorch
 
@@ -44,6 +44,19 @@ python main.py --save ./save_location --depth 16 --width 8 --dropout 0.2 --epoch
 
 ## Cite
 
+```
+@article{Ulicny22,
+  title = {Harmonic convolutional networks based on discrete cosine transform},
+  journal = {Pattern Recognition},
+  volume = {129},
+  pages = {108707},
+  year = {2022},
+  issn = {0031-3203},
+  doi = {https://doi.org/10.1016/j.patcog.2022.108707},
+  url = {https://www.sciencedirect.com/science/article/pii/S0031320322001881},
+  author = {Matej Ulicny and Vladimir A. Krylov and Rozenn Dahyot},
+}
+```
 ```
 @inproceedings{Ulicny19b,
   title = {Harmonic Networks for Image Classification},
