@@ -51,22 +51,25 @@ python main.py -a resnet101 ./path/to/imagenet/ --batch-size 256 --harm_root --h
 ## Cite
 
 ```
+@article{Ulicny22,
+  title = {Harmonic convolutional networks based on discrete cosine transform},
+  journal = {Pattern Recognition},
+  volume = {129},
+  pages = {108707},
+  year = {2022},
+  issn = {0031-3203},
+  doi = {https://doi.org/10.1016/j.patcog.2022.108707},
+  url = {https://www.sciencedirect.com/science/article/pii/S0031320322001881},
+  author = {Matej Ulicny and Vladimir A. Krylov and Rozenn Dahyot},
+}
+```
+```
 @inproceedings{Ulicny19b,
   title = {Harmonic Networks for Image Classification},
   author = {Ulicny, Matej and Krylov, Vladimir A and Dahyot, Rozenn},
   booktitle={Proceedings of the British Machine Vision Conference},
   year = {2019},
   month={Sep.}
-}
-```
-```
-@misc{Ulicny20,
-    title={Harmonic Convolutional Networks based on Discrete Cosine Transform},
-    author={Matej Ulicny and Vladimir A. Krylov and Rozenn Dahyot},
-    year={2020},
-    eprint={2001.06570},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
 }
 ```
 
