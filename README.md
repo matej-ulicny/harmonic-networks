@@ -6,7 +6,7 @@
 Repository implements harmonic blocks presented in following papers:
 * [**Harmonic Networks for Image Classification**](https://bmvc2019.org/wp-content/uploads/papers/0628-paper.pdf)
 * [**Harmonic Networks with Limited Training Samples**](https://ieeexplore.ieee.org/abstract/document/8902831)
-* [**Harmonic Convolutional Networks based on Discrete Cosine Transform**](https://arxiv.org/abs/2001.06570)
+* [**Harmonic Convolutional Networks based on Discrete Cosine Transform**](https://doi.org/10.1016/j.patcog.2022.108707)
 
 Convolutional neural networks (CNNs) learn filters in order to capture local correlation patterns in feature space. In this paper we propose to revert to learning combinations of preset spectral filters by switching to CNNs with harmonic blocks. We rely on the use of the Discrete Cosine Transform (DCT) filters which have excellent energy compaction properties and are widely used for image compression. The proposed harmonic blocks rely on DCT-modeling and replace conventional convolutional layers to produce partially or fully harmonic versions of new or existing CNN architectures. We demonstrate how the harmonic networks can be efficiently compressed in a straightforward manner by truncating high-frequency information in harmonic blocks which is possible due to the redundancies in the spectral domain. We report extensive experimental validation demonstrating the benefits of the introduction of harmonic blocks into state-of-the-art CNN models in image classification, segmentation and edge detection applications.
 
@@ -34,6 +34,19 @@ Repository implements experiments on several datasets:
 
 ## Citation
 ```
+@article{Ulicny22,
+  title = {Harmonic convolutional networks based on discrete cosine transform},
+  journal = {Pattern Recognition},
+  volume = {129},
+  pages = {108707},
+  year = {2022},
+  issn = {0031-3203},
+  doi = {https://doi.org/10.1016/j.patcog.2022.108707},
+  url = {https://www.sciencedirect.com/science/article/pii/S0031320322001881},
+  author = {Matej Ulicny and Vladimir A. Krylov and Rozenn Dahyot},
+}
+```
+```
 @inproceedings{Ulicny19b,
   title = {Harmonic Networks for Image Classification},
   author = {Ulicny, Matej and Krylov, Vladimir A and Dahyot, Rozenn},
@@ -51,16 +64,6 @@ Repository implements experiments on several datasets:
   ISSN={2219-5491},
   year={2019}, 
   month={Sep.},
-}
-```
-```
-@misc{Ulicny20,
-    title={Harmonic Convolutional Networks based on Discrete Cosine Transform},
-    author={Matej Ulicny and Vladimir A. Krylov and Rozenn Dahyot},
-    year={2020},
-    eprint={2001.06570},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
 }
 ```
 
