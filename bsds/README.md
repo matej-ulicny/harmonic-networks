@@ -1,6 +1,6 @@
 # Harmonic Networks for Holistically-Nested Edge Detection
 
-Our harmonic HED models trained on BSDS500 are reported in [**Harmonic Convolutional Networks based on Discrete Cosine Transform**](https://arxiv.org/abs/2001.06570)
+Our harmonic HED models trained on BSDS500 are reported in [**Harmonic Convolutional Networks based on Discrete Cosine Transform**](https://arxiv.org/abs/2001.06570v1)
 
 Models are implemented within our extension of this repository https://github.com/meteorshowers/hed-pytorch
 
